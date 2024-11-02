@@ -1,0 +1,50 @@
+<b>EC2 : Elastic Compute Cloud</b>
+
+<b>Theory:</b>
+- We get servers on rent.
+eg. i asked someone for high storage and ram. i asked them to create vm and give me that vm on rent to use. 
+and also give ssh access.
+
+-What we can ask?
+compute power, storage, Ram, Speed, network speed(downloading), can apply firewall rules means which traffic can get in or out.
+
+- what we can do with instance
+we can launch our application.
+any machine we can add in DNS,allocate ip to it,with the help of bootstrap script
+
+<b>Steps:</b>
+1. login aws account
+2. select region where u want to create instance
+3. search EC2
+4. launch instance-> slect machine -> select instance type -> key pair -> create ssh key
+5. Network setting:
+6. forewall: create security group -> allow ssh traffic from from anywhere we can give our system ip so you will only access.
+7. configure storage its like c drive we have to st root volume
+
+<b>Notes:</b>
+Key pair - for security it will create ssh key -> public key will in ssh and private key will be with you.
+
+private key formate:
+.pem : mac
+.ppk : below windows 10
+
+
+<b>How to acces EC2 from windows:</b>
+got o where ssh key file download-> go in location ->click there and type cmd
+-> type command ssh -i "key_name.pem/.ppk"-> go to ec2 instance on aws click on connect -> select ssh client ->
+from eg copy username -> yes -> u will enter ec2 instace
+
+<b>some commands:</b>
+#cat /stc/os-release : to check os
+#fee -m : how much cpu ram is threx
+#df -h : to check how much root volume is there
+#ip a : to finmd private ip it is bind to public ip
+
+<b>how u can access ssh your instance:</b>
+1. using git bash/terminal
+n windows ssh comand wont work:
+you can use git bash-> to to download where key download -> enter that ssh command stepwise
+
+2.from aws->
+one more option u can ssh yr instance:
+select instance -> click on connect -> ec2 instance connect -> enter instance username -> u can open through browser -> connect
